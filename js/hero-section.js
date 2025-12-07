@@ -50,7 +50,7 @@ class HeroSection extends LitElement {
                 font-size: var(--font-size-6xl);
                 margin-bottom: var(--spacing-lg);
                 animation: slideDown 0.8s ease-out;
-                -webkit-text-stroke: 16px black;
+                -webkit-text-stroke: 8px black;
                 paint-order: stroke fill;
             }
 
