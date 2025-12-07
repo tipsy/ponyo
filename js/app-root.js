@@ -39,8 +39,10 @@ class AppRoot extends LitElement {
             }
 
             .logo {
-                font-size: var(--font-size-xl);
-                font-weight: var(--font-weight-bold);
+                font-size: 32px;
+                line-height: 1;
+                font-family: var(--font-family-logo);
+                font-weight: 600;
                 color: var(--color-text);
                 text-decoration: none;
                 background: var(--gradient-primary);

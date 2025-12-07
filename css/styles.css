@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600&display=swap');
 
 :root {
     /* Colors */
@@ -36,6 +36,7 @@
 
     /* Typography */
     --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-family-logo: 'Outfit', system-ui, sans-serif;
     --font-size-sm: 14px;
     --font-size-base: 16px;
     --font-size-lg: 18px;
