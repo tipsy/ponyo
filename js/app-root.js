@@ -2,7 +2,8 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import { animationStyles } from './shared-styles.js';
 import { LocaleController } from './locales.js';
 import './hero-section.js';
-import './features-section.js';
+import './services-section.js';
+import './values-section.js';
 import './footer-section.js';
 import './language-selector.js';
 
@@ -11,8 +12,7 @@ class AppRoot extends LitElement {
         animationStyles,
         css`
             :host {
-                display: flex;
-                flex-direction: column;
+                display: block;
                 width: 100%;
                 min-height: 100vh;
                 box-sizing: border-box;
@@ -52,22 +52,12 @@ class AppRoot extends LitElement {
             }
 
             .content {
-                flex: 1;
+                width: 100%;
                 animation: fadeIn 0.6s ease-out;
-            }
-
-            .container {
-                max-width: var(--container-max-width);
-                margin: 0 auto;
-                padding: var(--spacing-lg);
             }
 
             @media (max-width: 768px) {
                 .header {
-                    padding: var(--spacing-md);
-                }
-
-                .container {
                     padding: var(--spacing-md);
                 }
             }
@@ -89,9 +79,8 @@ class AppRoot extends LitElement {
             </header>
             <div class="content">
                 <hero-section></hero-section>
-                <div class="container">
-                    <features-section></features-section>
-                </div>
+                <services-section></services-section>
+                <values-section></values-section>
             </div>
             <footer-section></footer-section>
         `;

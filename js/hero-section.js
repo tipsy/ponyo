@@ -16,8 +16,14 @@ class HeroSection extends LitElement {
                 position: relative;
                 text-align: center;
                 padding: var(--spacing-4xl) var(--spacing-xl);
+                /* Fallback gradient */
                 background: var(--gradient-hero);
                 overflow: hidden;
+                /* Background Image */
+                background-image: url('https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
             }
 
             .hero::before {
@@ -27,7 +33,8 @@ class HeroSection extends LitElement {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+                /* Overlay removed as requested */
+                background: transparent;
                 pointer-events: none;
             }
 
@@ -43,16 +50,8 @@ class HeroSection extends LitElement {
                 font-size: var(--font-size-6xl);
                 margin-bottom: var(--spacing-lg);
                 animation: slideDown 0.8s ease-out;
-            }
-
-            p {
-                color: rgba(255, 255, 255, 0.95);
-                font-size: var(--font-size-xl);
-                font-weight: var(--font-weight-medium);
-                animation: slideUp 0.8s ease-out;
-                animation-delay: 0.2s;
-                opacity: 0;
-                animation-fill-mode: forwards;
+                -webkit-text-stroke: 16px black;
+                paint-order: stroke fill;
             }
 
             @media (max-width: 768px) {
@@ -81,7 +80,6 @@ class HeroSection extends LitElement {
             <div class="hero">
                 <div class="hero-content">
                     <h1>${this.localeController.t('hero.title')}</h1>
-                    <p>${this.localeController.t('hero.subtitle')}</p>
                 </div>
             </div>
         `;
