@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import { typographyStyles } from './shared-styles.js';
+import { LocaleController } from './locales.js';
 
 class FooterSection extends LitElement {
     static styles = [
@@ -11,16 +12,23 @@ class FooterSection extends LitElement {
             }
 
             .footer {
-                padding: var(--spacing-lg, 24px);
-                background-color: var(--color-background-secondary, #f5f5f5);
+                padding: var(--spacing-xl);
+                background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
                 text-align: center;
+                border-top: 1px solid var(--color-background-tertiary);
             }
 
             p {
-                font-size: var(--font-size-sm, 14px);
+                font-size: var(--font-size-sm);
+                color: var(--color-text-muted);
             }
         `
     ];
+
+    constructor() {
+        super();
+        this.localeController = new LocaleController(this);
+    }
 
     get currentYear() {
         return new Date().getFullYear();
@@ -29,11 +37,12 @@ class FooterSection extends LitElement {
     render() {
         return html`
             <div class="footer">
-                <p>&copy; ${this.currentYear} Ponyo. Built with Lit.</p>
+                <p>${this.localeController.t('footer.copyright', { year: this.currentYear })}</p>
             </div>
         `;
     }
 }
 
 customElements.define('footer-section', FooterSection);
+
 
